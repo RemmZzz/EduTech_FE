@@ -1,0 +1,1 @@
+# Courses Module\nRoutes: /courses, /courses/:id, /dashboard/courses/:id\nTo Do: danh sách, chi tiết, lessons, progress.

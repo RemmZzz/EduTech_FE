@@ -1,0 +1,1 @@
+MainLayout.jsx, AuthLayout.jsx – khung chung cho trang.

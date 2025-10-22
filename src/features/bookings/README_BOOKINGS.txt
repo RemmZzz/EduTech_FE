@@ -1,0 +1,1 @@
+# Bookings Module\nRoutes: /booking, /checkout/result\nTo Do: chọn slot, confirm, redirect thanh toán, trạng thái.

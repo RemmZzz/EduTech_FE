@@ -1,0 +1,1 @@
+# Auth Module\nRoutes: /login, /register, /forgot-password\nTo Do: form, validate, gọi API JWT, lưu token, redirect.

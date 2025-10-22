@@ -1,0 +1,1 @@
+Ghi chú responsive cho Mobile/Tablet với Tailwind Grid/Flex.

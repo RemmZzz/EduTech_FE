@@ -1,0 +1,1 @@
+# Dashboard Module\nRoutes: /dashboard, /dashboard/courses, /dashboard/bookings, /dashboard/certificates, /dashboard/ai, /dashboard/notifications\nTo Do: sidebar/topbar, charts, ai-assistant.

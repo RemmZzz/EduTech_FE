@@ -1,0 +1,1 @@
+Quản trị: /admin, /admin/tutors-approval, /admin/users, /admin/courses, /admin/transactions, /admin/reports.
