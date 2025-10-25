@@ -1,13 +1,17 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
-// Auth pages (placeholders)
+// 1. IMPORT CÁC COMPONENT THẬT CHO TRANG CHỦ
+import MainLayout from "../layouts/MainLayout.jsx"; // <-- "Cái Khung"
+import HomePage from '../features/home_page/homepage' // <-- "Cái Ruột"
+
+// --- Auth pages (Giữ nguyên placeholder) ---
 const Login = () => <div className="p-10 text-center">Login Page</div>
 const Register = () => <div className="p-10 text-center">Register Page</div>
 const ForgotPassword = () => <div className="p-10 text-center">Forgot Password</div>
 
-// Public pages (placeholders)
-const Home = () => <div className="p-10 text-center">Home Page</div>
+// --- Public pages (Giữ nguyên, chỉ xóa 'Home') ---
+// const Home = () => <div className="p-10 text-center">Home Page</div> // <-- 2. XÓA DÒNG NÀY
 const Tutors = () => <div className="p-10 text-center">Tutor List</div>
 const TutorDetail = () => <div className="p-10 text-center">Tutor Detail</div>
 const Courses = () => <div className="p-10 text-center">Course List</div>
@@ -18,7 +22,7 @@ const PaymentResult = () => <div className="p-10 text-center">Payment Result</di
 const Faqs = () => <div className="p-10 text-center">FAQs</div>
 const Blogs = () => <div className="p-10 text-center">Blogs</div>
 
-// Dashboards (placeholders)
+// --- Dashboards (Giữ nguyên placeholder) ---
 const StudentDashboard = () => <div className="p-10 text-center">Student Dashboard</div>
 const MyCourses = () => <div className="p-10 text-center">My Courses</div>
 const MyBookings = () => <div className="p-10 text-center">My Bookings</div>
@@ -43,8 +47,16 @@ const Reports = () => <div className="p-10 text-center">Reports</div>
 export default function AppRoutes() {
   return (
     <Routes>
-      {/* Public */}
-      <Route path="/" element={<Home />} />
+      
+      {/* 3. THAY THẾ ROUTE TRANG CHỦ */}
+      {/* Route này bọc trang chủ trong layout (Header/Sidebar) */}
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<HomePage />} />
+      </Route>
+
+      {/* --- TẤT CẢ CÁC ROUTE CŨ VẪN GIỮ NGUYÊN --- */}
+      
+      {/* Public (trừ trang chủ) */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
