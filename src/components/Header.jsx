@@ -1,47 +1,43 @@
 // src/components/Header.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaSearch, FaBell, FaUserCircle } from 'react-icons/fa';
+import React from "react";
+import { Link } from "react-router-dom";
+
+const actions = [
+  { label: "CÁC KHÓA HỌC", to: "/khoa-hoc" },
+  { label: "GIA SƯ", to: "/gia-su-gioi" },
+  { label: "AI HỌC TẬP", to: "/ai" },
+  { label: "ĐĂNG NHẬP", to: "/dang-nhap" },
+];
 
 function Header() {
   return (
-    <header className="flex items-center justify-between border-b border-gray-200 bg-white px-6 h-20 md:h-24 overflow-hidden">
-      {/* Logo */}
-      <div className="flex-shrink-0 h-full">
-        <Link to="/" className="flex items-center h-full">
-          {/* logo nằm trong public: /logo.png */}
+    <header className="w-full border-b border-gray-200 bg-white shadow-sm">
+      {/* H header cố định, không dùng margin âm / translate */}
+      <div className="flex h-[72px] w-full items-center justify-between px-6">
+        {/* Logo bên trái */}
+        <Link to="/" className="flex h-full items-center">
           <img
-            src="/logo3.png"
+            src="/logo.png"
             alt="EduTech logo"
-            className="h-full w-auto block object-contain scale-[1.2]"
+            className="block h-[70px] w-auto object-contain"
           />
         </Link>
-      </div>
 
-      {/* Search */}
-      <div className="flex-grow max-w-lg mx-4">
-        <div className="relative">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            <FaSearch className="h-5 w-5 text-gray-400" />
-          </div>
-          <input
-            type="text"
-            placeholder="Tìm kiếm gia sư, môn học..."
-            className="block w-full rounded-md border border-gray-300 bg-gray-50 py-2 pl-10 pr-3 focus:border-blue-500 focus:ring-blue-500"
-          />
-        </div>
+        {/* Menu bên phải */}
+        <nav className="flex items-center gap-4">
+          {actions.map((item) => (
+            <div key={item.label} className="relative">
+              <div className="absolute inset-0 translate-x-[3px] translate-y-[3px] rounded-md border-2 border-[#008fa1]" />
+              <Link
+                to={item.to}
+                className="relative inline-flex items-center justify-center rounded-md bg-[#00b8d4] px-6 py-2 text-sm font-bold uppercase tracking-wide text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#00a3bd]"
+              >
+                {item.label}
+              </Link>
+            </div>
+          ))}
+        </nav>
       </div>
-
-      {/* Nav phải */}
-      <nav className="flex items-center gap-x-4">
-        <button className="rounded-full p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
-          <FaBell className="h-5 w-5" />
-        </button>
-        <button className="flex items-center gap-x-2 rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700">
-          <FaUserCircle className="h-5 w-5" />
-          <span>Đăng nhập</span>
-        </button>
-      </nav>
     </header>
   );
 }

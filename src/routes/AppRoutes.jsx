@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 
 // 1. IMPORT CÁC COMPONENT THẬT CHO TRANG CHỦ
 import MainLayout from "../layouts/MainLayout.jsx"; // <-- "Cái Khung"
-import HomePage from '../features/home_page/homepage' // <-- "Cái Ruột"
+import HomePage from '../features/home_page/homepage.jsx' // <-- "Cái Ruột"
 
 // --- Auth pages (Giữ nguyên placeholder) ---
 const Login = () => <div className="p-10 text-center">Login Page</div>
